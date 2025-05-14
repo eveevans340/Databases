@@ -65,15 +65,15 @@ while menu_choice != '7':
     elif menu_choice == '5':
         print_query('lesson_info')
     elif menu_choice == '6':
-        print_query('')
+        print_query('student_all')
     elif menu_choice == '7':
-        print_query('')
+        print_query('lesson_order')
     elif menu_choice == '8':
-        print_query('')
+        print_query('student_age_ordered')
     elif menu_choice == '9':
-        print_query('')
+        print_query('born_2008')
     elif menu_choice == '10':
-        print_query('')
+        print_query('piano')
 
 make = input('Which make cars do you want to see: ')
 print_parameter_query("model, top_speed", "make = ? ORDER BY top_speed DESC",make)
