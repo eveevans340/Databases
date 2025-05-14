@@ -44,36 +44,37 @@ while menu_choice != '11':
     menu_choice = input('Welcome to the music lesson database!\n\n'
                         'Type the number for the information you want:\n'
                         '1: All information\n'
-                        '2: Children with Monday lessons\n'
-                        '3: Children with Wednesday lessons\n'
-                        '4: Parents who still owe fees\n'
-                        '5: Lesson information\n'
-                        '6: All of the students information\n'
-                        '7: Lessons in chronological order\n'
-                        '8: Students youngest to oldest\n'
-                        '9: All students born in 2008\n'
-                        '10: Students who play the piano\n'
-                        '11: Exit\n\nType option here: ')
+                        '2: Students with a lesson on a specific day\n'
+                        '3: Parents who still owe fees\n'
+                        '4: Lesson information\n'
+                        '5: All of the students information\n'
+                        '6: Lessons in chronological order\n'
+                        '7: Students youngest to oldest\n'
+                        '8: All students born in 2008\n'
+                        '9: Students who play the piano\n'
+                        '10: Exit\n\nType option here: ')
     if menu_choice == '1':
         print_query('all_data')
     elif menu_choice == '2':
-        print_query('monday')
+        lesson_day = input('What day of lessons do you want to see: ')
+        print_parameter_query('child_first_name, child_surname, instrument, lesson_time', 'lesson_day = ? ORDER BY lesson_time', lesson_day)
     elif menu_choice == '3':
-        print_query('wednesday')
-    elif menu_choice == '4':
         print_query('unpaid_fees')
-    elif menu_choice == '5':
+    elif menu_choice == '4':
         print_query('lesson_info')
-    elif menu_choice == '6':
+    elif menu_choice == '5':
         print_query('student_all')
-    elif menu_choice == '7':
+    elif menu_choice == '6':
         print_query('lesson_order')
-    elif menu_choice == '8':
+    elif menu_choice == '7':
         print_query('student_age_ordered')
-    elif menu_choice == '9':
+    elif menu_choice == '8':
         print_query('born_2008')
-    elif menu_choice == '10':
+    elif menu_choice == '9':
         print_query('piano')
 
 instrument = input('What type of instrument lessons do you want to see: ')
 print_parameter_query('child_first_name, child_surname, instrument', 'instrument = ? ORDER BY child_first_name', instrument)
+
+lesson_day = input('What day of lessons do you want to see: ')
+print_parameter_query('child_first_name, child_surname, instrument, lesson_time', 'lesson_day = ? ORDER BY lesson_time', lesson_day)
