@@ -40,7 +40,7 @@ def print_query(view_name:str):
     db.close()
 
 menu_choice = ''
-while menu_choice != '7':
+while menu_choice != '11':
     menu_choice = input('Welcome to the music lesson database!\n\n'
                         'Type the number for the information you want:\n'
                         '1: All information\n'
@@ -74,6 +74,3 @@ while menu_choice != '7':
         print_query('born_2008')
     elif menu_choice == '10':
         print_query('piano')
-
-make = input('Which make cars do you want to see: ')
-print_parameter_query("model, top_speed", "make = ? ORDER BY top_speed DESC",make)
