@@ -73,7 +73,7 @@ while menu_choice != '11':
         print_parameter_query('child_first_name, child_surname, date_of_birth, lesson_day, lesson_time, instrument', 'instrument = ? ORDER BY date_of_birth, child_first_name', date_of_birth)
     elif menu_choice == '9':
         instrument = input('What type of instrument lessons do you want to see: ')
-        print_parameter_query('child_first_name, child_surname, instrument', 'instrument = ? ORDER BY child_first_name', instrument)
+        print_parameter_query('child_first_name, child_surname, instrument, lesson_day, lesson_time', 'instrument = ? ORDER BY lesson_day, lesson_time', instrument)
 
 
 
