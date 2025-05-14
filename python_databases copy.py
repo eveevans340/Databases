@@ -74,3 +74,6 @@ while menu_choice != '11':
         print_query('born_2008')
     elif menu_choice == '10':
         print_query('piano')
+
+type_instrument = input('What type of instrument lessons do you want to see: ')
+print_parameter_query('child_first_name, child_surname, instrument', 'instrument = ? ORDER BY first_name', type_instrument)
