@@ -51,8 +51,8 @@ while menu_choice != '11':
                         '6: All of the students information\n'
                         '7: Lessons in chronological order\n'
                         '8: Students youngest to oldest\n'
-                        '9: All students born in 2008 '
-                        '10: Students who play the piano'
+                        '9: All students born in 2008\n'
+                        '10: Students who play the piano\n'
                         '11: Exit\n\nType option here: ')
     if menu_choice == '1':
         print_query('all_data')
