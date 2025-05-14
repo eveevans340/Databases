@@ -45,23 +45,35 @@ while menu_choice != '7':
                         'Type the number for the information you want:\n'
                         '1: All information\n'
                         '2: Children with Monday lessons\n'
-                        '3: Children with\n'
-                        '4: Cars made by English manufacturers\n'
-                        '5: Non-electric cars\n'
-                        '6: The top ten fastest cars\n'
-                        '7: Exit\n\nType option here: ')
+                        '3: Children with Wednesday lessons\n'
+                        '4: Parents who still owe fees\n'
+                        '5: Lesson information\n'
+                        '6: All of the students information\n'
+                        '7: Lessons in chronological order\n'
+                        '8: Students youngest to oldest\n'
+                        '9: All students born in 2008 '
+                        '10: Students who play the piano'
+                        '11: Exit\n\nType option here: ')
     if menu_choice == '1':
-        print_query('all_cars')
+        print_query('all_data')
     elif menu_choice == '2':
-        print_query('bugatti_cars')
+        print_query('monday')
     elif menu_choice == '3':
-        print_query('cheap_fast_cars')
+        print_query('wednesday')
     elif menu_choice == '4':
-        print_query('english_cars')
+        print_query('unpaid_fees')
     elif menu_choice == '5':
-        print_query('non_electric')
+        print_query('lesson_info')
     elif menu_choice == '6':
-        print_query('top_ten_fastest_cars')
+        print_query('')
+    elif menu_choice == '7':
+        print_query('')
+    elif menu_choice == '8':
+        print_query('')
+    elif menu_choice == '9':
+        print_query('')
+    elif menu_choice == '10':
+        print_query('')
 
 make = input('Which make cars do you want to see: ')
 print_parameter_query("model, top_speed", "make = ? ORDER BY top_speed DESC",make)
