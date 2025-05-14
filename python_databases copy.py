@@ -70,7 +70,7 @@ while menu_choice != '11':
         print_query('student_age_ordered')
     elif menu_choice == '8':
         date_of_birth = input('What birth year do you want to see?: ')
-        print_parameter_query('child_first_name, child_surname, date_of_birth, lesson_day, lesson_time, instrument', 'date_of_birth = ? WHERE date_of_birth LIKE "date_of_birth% ORDER BY date_of_birth, child_first_name', date_of_birth)
+        print_parameter_query('child_first_name, child_surname, date_of_birth, lesson_day, lesson_time, instrument', 'date_of_birth = ? WHERE date_of_birth LIKE 'date_of_birth'% ORDER BY date_of_birth, child_first_name', date_of_birth)
     elif menu_choice == '9':
         instrument = input('What type of instrument lessons do you want to see: ').title()
         print_parameter_query('child_first_name, child_surname, instrument, lesson_day, lesson_time', 'instrument = ? ORDER BY lesson_day, lesson_time', instrument)
