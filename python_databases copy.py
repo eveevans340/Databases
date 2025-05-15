@@ -51,7 +51,7 @@ while menu_choice != '10':
                         '6: Lessons in chronological order\n'
                         '7: Students youngest to oldest\n'
                         '8: All students born in a specific year\n'
-                        '9: Students who play a specific instrument\n'
+                        '9: thStudents who play a specific instrument\n'
                         '10: Exit\n\nType option here: ')
     if menu_choice == '1':
         print_query('all_data')
@@ -70,7 +70,7 @@ while menu_choice != '10':
         print_query('student_age_ordered')
     elif menu_choice == '8':
         date_of_birth = input('What birth year do you want to see?: ')
-        print_parameter_query('child_first_name, child_surname, date_of_birth, lesson_day, lesson_time, instrument', 'date_of_birth = ?  ORDER BY date_of_birth, child_first_name', date_of_birth)
+        print_parameter_query('child_first_name, child_surname, date_of_birth, lesson_day, lesson_time, instrument', 'date_of_birth LIKE "?%"  ORDER BY date_of_birth, child_first_name', date_of_birth)
     elif menu_choice == '9':
         instrument = input('What type of instrument lessons do you want to see: ').title()
         print_parameter_query('child_first_name, child_surname, instrument, lesson_day, lesson_time', 'instrument = ? ORDER BY lesson_day, lesson_time', instrument)
