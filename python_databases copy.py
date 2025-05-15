@@ -52,7 +52,7 @@ while menu_choice != '11':
                         '7: Students youngest to oldest\n'
                         '8: All students born in 2008\n'
                         '9: Students who play a specific instrument\n'
-                        '10: Students who are siblings'
+                        '10: Students who are siblings\n'
                         '11: Exit\n\nType option here: ')
     if menu_choice == '1':
         print_query('all_data')
