@@ -40,7 +40,7 @@ def print_query(view_name:str):
     db.close()
 
 menu_choice = ''
-while menu_choice != '10':
+while menu_choice != '11':
     menu_choice = input('Welcome to the music lesson database!\n\n'
                         'Type the number for the information you want:\n'
                         '1: All information\n'
@@ -50,9 +50,10 @@ while menu_choice != '10':
                         '5: All of the students information\n'
                         '6: Lessons in chronological order\n'
                         '7: Students youngest to oldest\n'
-                        '8: All students born in a specific year\n'
-                        '9: thStudents who play a specific instrument\n'
-                        '10: Exit\n\nType option here: ')
+                        '8: All students born in 2008\n'
+                        '9: Students who play a specific instrument\n'
+                        '10: Students who are siblings'
+                        '11: Exit\n\nType option here: ')
     if menu_choice == '1':
         print_query('all_data')
     elif menu_choice == '2':
@@ -69,11 +70,12 @@ while menu_choice != '10':
     elif menu_choice == '7':
         print_query('student_age_ordered')
     elif menu_choice == '8':
-        date_of_birth = input('What birth year do you want to see?: ')
-        print_parameter_query('child_first_name, child_surname, date_of_birth, lesson_day, lesson_time, instrument', 'date_of_birth LIKE "?%"  ORDER BY date_of_birth, child_first_name', date_of_birth)
+        print_query('born_2008')
     elif menu_choice == '9':
         instrument = input('What type of instrument lessons do you want to see: ').title()
         print_parameter_query('child_first_name, child_surname, instrument, lesson_day, lesson_time', 'instrument = ? ORDER BY lesson_day, lesson_time', instrument)
+    elif menu_choice == '10':
+        print_query('siblings')
 
 
 
