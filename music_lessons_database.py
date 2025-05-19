@@ -54,6 +54,28 @@ choices = ['All information',
              'Students who play a specific instrument',
              'Students who are siblings']
 choice = choicebox(msg, title, choices)
+if choice = 'All information':
+    print_query('all data')
+elif choice = 'Students with a lesson on a specific day':
+    lesson_day = input('What day of lessons do you want to see: ').title()
+    print_parameter_query('child_first_name, child_surname, instrument, lesson_time', 'lesson_day = ? ORDER BY lesson_time', lesson_day)
+elif choice = 'Parents who still owe fees':
+    print_query('unpaid_fees')
+elif choice = 'Lesson information':
+    print_query('lesson_info')
+elif choice = 'All of the students information':
+    print_query('student_all')
+elif choice = 'Lessons in chronological order':
+    print_query('lesson_order')
+elif choice = 'Students youngest to oldest':
+    print_query('student_age_ordered')
+elif choice = 'All students born in 2008':
+    print_query('born_2008')
+elif choice = 'Students who play a specific instrument':
+    instrument = input('What type of instrument lessons do you want to see: ').title()
+    print_parameter_query('child_first_name, child_surname, instrument, lesson_day, lesson_time', 'instrument = ? ORDER BY lesson_day, lesson_time', instrument)
+elif choice = 'Students who are siblings':
+    print_query('siblings')
 
 
 
@@ -94,13 +116,3 @@ while menu_choice != '11':
         print_parameter_query('child_first_name, child_surname, instrument, lesson_day, lesson_time', 'instrument = ? ORDER BY lesson_day, lesson_time', instrument)
     elif menu_choice == '10':
         print_query('siblings')
-
-
-
-
-
-instrument = input('What type of instrument lessons do you want to see: ')
-print_parameter_query('child_first_name, child_surname, instrument', 'instrument = ? ORDER BY child_first_name', instrument)
-
-lesson_day = input('What day of lessons do you want to see: ')
-print_parameter_query('child_first_name, child_surname, instrument, lesson_time', 'lesson_day = ? ORDER BY lesson_time', lesson_day)
