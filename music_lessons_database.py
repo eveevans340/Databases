@@ -11,6 +11,7 @@ TABLES = (" music_lessons "
            "LEFT JOIN schools ON music_lessons.school_id = schools.school_id "
            "LEFT JOIN lesson_days ON music_lessons.lesson_day_id = lesson_days.lesson_day_id "
            "LEFT JOIN parent_info ON music_lessons.parent_id = parent_info.parent_id ")
+from easygui import *
 
 def print_parameter_query(fields:str, where:str, parameter):
     """ Prints the results for a parameter query in tabular form. """
@@ -39,6 +40,22 @@ def print_query(view_name:str):
     # Print the results in a table with the headings
     print(tabulate(results,headings))
     db.close()
+
+msg ="What information do you want?"
+title = "Music Lessons"
+choices = ['All information',
+             'Students with a lesson on a specific day',
+             'Parents who still owe fees',
+             'Lesson information',
+             'All of the students information',
+             'Lessons in chronological order',
+             'Students youngest to oldest',
+             'All students born in 2008',
+             'Students who play a specific instrument',
+             'Students who are siblings']
+choice = choicebox(msg, title, choices)
+
+
 
 menu_choice = ''
 while menu_choice != '11':
