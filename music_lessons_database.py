@@ -9,7 +9,8 @@ TABLES = (" music_lessons "
            "LEFT JOIN genders ON music_lessons.gender_id = genders.gender_id "
            "LEFT JOIN instruments ON music_lessons.instrument_id = instruments.instrument_id "
            "LEFT JOIN schools ON music_lessons.school_id = schools.school_id "
-           "LEFT JOIN lesson_days ON music_lessons.lesson_day_id = lesson_days.lesson_day_id ")
+           "LEFT JOIN lesson_days ON music_lessons.lesson_day_id = lesson_days.lesson_day_id "
+           "LEFT JOIN parent_info ON music_lessons.parent_id = parent_info.parent_id ")
 
 def print_parameter_query(fields:str, where:str, parameter):
     """ Prints the results for a parameter query in tabular form. """
